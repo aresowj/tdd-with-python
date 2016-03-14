@@ -3,19 +3,16 @@
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from pyvirtualdisplay import Display
 import unittest
+
 
 class NewVisitorTest(unittest.TestCase):
     def setUp(self):
-        self.display = Display(visible=0, size=(1024, 768))
-        self.display.start()
         self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(3)
 
     def tearDown(self):
         self.browser.quit()
-        self.display.stop()
 
     def check_for_row_in_list_table(self, row_text):
         table = self.browser.find_element_by_id('id_list_table')
@@ -30,8 +27,8 @@ class NewVisitorTest(unittest.TestCase):
 
         inputbox = self.browser.find_element_by_id('id_new_item')
         self.assertEqual(
-                 inputbox.get_attribute('placeholder'),
-                'Enter a to-do item'
+            inputbox.get_attribute('placeholder'),
+            'Enter a to-do item'
         )
         inputbox.send_keys('Buy peacock feathers')
         inputbox.send_keys(Keys.ENTER)

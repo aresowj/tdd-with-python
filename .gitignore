@@ -1,6 +1,8 @@
 db.sqlite3
 __pycache__
 *.pyc
+*.swp
 venv/
 */migrations/00*
 .idea/
+

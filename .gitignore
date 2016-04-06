@@ -3,6 +3,7 @@ __pycache__
 *.pyc
 *.swp
 venv/
-*/migrations/00*
+superlists/*/migrations/*
 .idea/
+static/
 

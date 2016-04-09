@@ -1,8 +1,4 @@
-db.sqlite3
 __pycache__
-*.swp
 venv/
 migrations/
 .idea/
-static/
-database/
